@@ -4,10 +4,12 @@ import shutil
 print('This program classifies the file by extensions.\n')
 print('input dir path:')
 
+
 def classify_file(file, extension):
-    if os.path.isdir(src+'\\'+extension) == False:
-        os.mkdir(src+'\\'+extension)
-    shutil.move(src+'\\'+file, src+'\\'+extension+'\\'+file)
+    if os.path.isdir(src + '\\' + extension) == False:
+        os.mkdir(src + '\\' + extension)
+    shutil.move(src + '\\' + file, src + '\\' + extension + '\\' + file)
+
 
 src = input()
 
@@ -20,9 +22,11 @@ except:
 
 for i in file_list:
     _, file_extension = os.path.splitext(i)
-    if(i in '.' == True):
+    if('.' in i):
         print('name         : ' + _)
         print('extension is : ' + file_extension[1:] +'\n')
         classify_file(i, file_extension[1:])
+
+
 
 print('done!')
